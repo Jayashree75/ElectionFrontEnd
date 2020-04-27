@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="card col-lg-4 col-xs-12 mx-auto" style="margin-top: 100px;">
+    <div class="card-body">
+      <div class="text-center">
+      </div>
+      <h4 class="text-center">Sign Up</h4>
+      <form [formGroup]="Registration">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputFirstName4">FirstName</label>
+            <input type="FirstName" class="form-control" id="inputFirstName4" placeholder="FirstName"
+              formControlName="FirstName">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputLastName4">lastName</label>
+            <input type="LastName" class="form-control" id="inputLastName4" placeholder="LastName"
+              formControlName="LastName">
+          </div>
+
+          <div class="form-group col-md-12">
+            <label for="inputMobileNumber4">MobileNumber</label>
+            <input type="MobileNumber" class="form-control" id="inputMobileNumber4" placeholder="MobileNumber"
+              formControlName="MobileNumber">
+          </div>
+          <div class="form-group col-md-12">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" formControlName="UserName">
+          </div>
+          <div class="form-group col-md-12">
+            <label for="inputPassword4">Password</label>
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Password"
+              formControlName="Password">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Remember me
+            </label>
+          </div>
+        </div>
+        <button type="submit" (click)="RegistrationForm()" class="btn btn-primary btn-block">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</div>

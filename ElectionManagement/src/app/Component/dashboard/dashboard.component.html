@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-success row-6" style="height: 65px;">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+    <div class="text-center" style="align-items: center;margin-left: 40%;">
+      <h2 claa="form text-center" style="color:indigo;font-size:x-large;">Election Management</h2>
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-secondary" (click)="Logout()">LogOut</button>
+</nav>
+<div>
+<div class="btn col-md-10 btn-space" style="height:20px">
+  <button type="button" class="btn btn-outline-primary" style="margin-right: 5px;">
+    <a routerLink="Party">Party</a>
+  </button>
+  <button type="button" class="btn btn-outline-primary">
+    <a routerLink="Constituency" >Constituency</a>
+  </button>
+  <button type="button" class="btn btn-outline-primary" style="margin-left: 5px;text-shadow: white;">
+    <a routerLink="Candidate">Candidate</a>
+  </button>
+</div>
+</div>
+<br>
+<div>
+  <div class="btn col-md-10 btn-space" style="height:20px">
+    <button type="button" class="btn btn-outline-primary" style="margin-right: 5px;">
+      <a>Party wise</a>
+    </button>
+    <button type="button" class="btn btn-outline-primary">
+      <a >Constituency wise/AllCandidate</a>
+    </button>
+    <button type="button" class="btn btn-outline-primary" style="margin-left: 5px;text-shadow: white;">
+      <a>Constituency wise/Trends</a>
+    </button>
+  </div>
+  </div>
+<div>
+  <router-outlet></router-outlet>
+</div>

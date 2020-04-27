@@ -1,0 +1,65 @@
+<div class="col-lg-10 mx-auto table-responsive" style="margin-top: 50px;">
+  <div>
+    <button class="btn btn-danger" onclick="document.getElementById('id01').style.display='block'"> Add User</button>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead style="background-color: rosybrown;">
+      <tr>
+        <th>sr.no</th>
+        <th>FirstName</th>
+        <th>LaststName</th>
+        <th>PartyName</th>
+        <th>ConstituencyName</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of searched ;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.partyName}}</td>
+        <td>{{user.name}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="DeleteCandidate(user)"> Delete</button>
+          <button class="btn btn-danger" *ngIf="!enableEdit" (click)="enableEditMethod($event, i)" style="margin-left: 20px;"> Edit</button>
+        
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div id="id01" class="modal col-md-12 " style="width: 50%;height: 70%; margin: 0 auto; top: 25%;">
+
+  <form class="modal-content animate" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close"
+        title="Close Modal">&times;</span>
+    </div>
+    <form [formGroup]="Candidategroup">
+      <div class="form-group col-md-12">
+        <label for="inputFirstName4">FirstName</label>
+        <input type="FirstName" placeholder="FirstName" formControlName="FirstName">
+        <label for="inputLastName4">lastName</label>
+        <input type="LastName" placeholder="LastName" formControlName="LastName">
+        <label for="inputpartyName4">Party Name</label>
+        <select formControlName="partyId">
+          <option [value]="party.partyId" *ngFor="let party of parties"> {{party.partyName}}</option>
+        </select>
+        <label for="inputpartyName4">Constituency Name</label>
+        <select formControlName="ConstituencyId">
+          <option [value]="Constituencies.constituencyId" *ngFor="let Constituencies of constituency">
+            {{Constituencies.name}}</option>
+        </select>
+      </div>
+    </form>
+    <div class="input-group-append" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'"
+        class="cancelbtn">Cancel</button>
+      <button type="button" (click)="candidateaddForm()">Add</button>
+    </div>
+  </form>
+</div>
+
+
+

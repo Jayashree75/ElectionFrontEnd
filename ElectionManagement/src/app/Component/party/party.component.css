@@ -1,0 +1,7 @@
+.hide
+{
+    visibility: hidden;
+}
+.show :hover .hide{
+    visibility: visible;
+}

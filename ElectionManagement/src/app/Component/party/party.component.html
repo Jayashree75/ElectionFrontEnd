@@ -1,0 +1,49 @@
+
+<div class="col-lg-10 mx-auto table-responsive" style="margin-top: 50px;">
+  <div>
+    <button class="btn btn-danger" onclick="document.getElementById('id01').style.display='block'"> Add User</button>
+</div>
+  <table class="table table-striped table-bordered">
+      <thead style="background-color: rosybrown;">
+          <tr class="col-lg-10">
+              <th >sr.no</th>
+              <th >partyName</th>
+              <th >Action</th>
+          </tr>
+      </thead>
+      <tbody class="show" >
+          <tr *ngFor="let user of searched ;let i=index" 
+           style="width:auto;" >
+              <td>{{i+1}}</td>
+              <td>{{user.partyName}}
+              </td>
+              <td>
+                <button class="btn btn-danger" (click)="Deleteparty(user)"> Delete</button>
+                <button class="btn btn-danger"style="margin-left: 20px;"> Edit</button>
+              </td>
+          </tr>   
+      </tbody>
+  </table>
+  <div>
+</div>
+</div>
+
+
+<div id="id01" class="modal col-md-12 " style="width: 50%;height: 70%; margin: 0 auto; top: 25%;" >
+  
+  <form class="modal-content animate" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+    <form [formGroup]="PartyAdd">
+    <div class="form-group col-md-12">
+      <label for="inputEmail4">PartyName</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Party Name" formControlName="partyName">
+    </div>
+    </form>
+    <div class="input-group-append" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <button type="button" (click)="partyaddForm()">Add</button>
+    </div>
+  </form>
+</div>

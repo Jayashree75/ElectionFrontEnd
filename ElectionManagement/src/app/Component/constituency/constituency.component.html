@@ -1,0 +1,54 @@
+<div class="col-lg-10 mx-auto table-responsive" style="margin-top: 50px;">
+    <div>
+        <button class="btn btn-danger" onclick="document.getElementById('id01').style.display='block'"> Add
+            User</button>
+    </div>
+    <table class="table table-striped table-bordered">
+        <thead style="background-color: rosybrown;">
+            <tr>
+                <th>sr.no</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of searched ;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.city}}</td>
+                <td>{{user.state}}</td>
+                <td>
+                    <button class="btn btn-danger"> Delete</button>
+                    <button class="btn btn-danger" style="margin-left: 20px;"> Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="id01" class="modal col-md-12 " style="width: 50%;height: 70%; margin: 0 auto; top: 25%;">
+
+    <form class="modal-content animate" method="post">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                title="Close Modal">&times;</span>
+        </div>
+        <form [formGroup]="ConstituencyAdd">
+            <div class="form-group col-md-12">
+                <label for="inputName4">Constituency Name</label>
+                <input type="Name" class="form-control" id="inputName4" placeholder="Constituency Name"
+                    formControlName="Name">
+                <label for="inputCity4">City</label>
+                <input type="City" class="form-control" id="inputCity4" placeholder="City" formControlName="City">
+                <label for="inputState4">State</label>
+                <input type="State" class="form-control" id="inputState4" placeholder="State" formControlName="State">
+            </div>
+        </form>
+        <div class="input-group-append" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                class="cancelbtn">Cancel</button>
+            <button type="button" (click)="ConstituencyaddForm()">Add</button>
+        </div>
+    </form>
+</div>
